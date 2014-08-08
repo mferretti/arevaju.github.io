@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Story of Land Use Indicators</title>
+<title>Discovering Portuguese Cities</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
   <link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' /> 
@@ -61,17 +61,17 @@ section.active {
       <h3>Lisboa</h3>
       <p>Lisboa is the capital of Portugal blabla bla balbalaallalalaaaa.</p>
     </section>
-    <section id='london-bridge'>
-      <h3>London Bridge</h3>
+    <section id='coimbra'>
+      <h3>Coimbra</h3>
       <p>Holmes and Watson's investigations take them across London. Sherlock deduces that West was murdered elsewhere, then moved to Aldgate Station to create the illusion that he was crushed on the tracks by a train. On their way to Woolwich Sherlock dispatches a telegram to Mycroft at London Bridge: "Send list of all foreign spies known to be in England, with full address."</p>
     </section>
-    <section id='woolwich'>
-      <h3>Woolwich Arsenal</h3>
+    <section id='faro'>
+      <h3>Faro</h3>
       <p>While investigating at Woolwich Arsenal Sherlock learns that West did not have the three keys&mdash;door, office, and safe&mdash;necessary to steal the papers. The train station clerk mentions seeing an agitated West boarding the 8:15 train to London Bridge. Sherlock suspects West of following someone who had access to the Woolwich chief's keyring with all three keys.</p>
     </section>
-    <section id='gloucester'>
-      <h3>Gloucester Road</h3>
-      <p>Mycroft responds to Sherlock's telegram and mentions several spies. Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He heads to the nearby Gloucester Road station to investigate and learns that the windows of Caulfield Gardens open over rail tracks where trains stop frequently.</p>
+    <section id='porto'>
+      <h3>Porto</h3>
+      <p>Porto (Portuguese pronunciation: ['po?tu]) (occasionally also known as Oporto in English[4]) is the second-largest city in Portugal, after Lisbon, and one of the major urban areas in Southern Europe and the capital of the second major great urban area in Portugal.The urban area of Porto, which extends beyond the administrative limits of the city, has a population of 1.3 million (2011)[5] in an area of 389 km2 (150 sq mi),[6] making it the second-largest urban area in Portugal. The Porto Metropolitan Area includes an estimated 2 million people.[7][8][9] It is recognized as a Gamma- level global city by the Globalization and World Cities (GaWC) Study Group,[10] being one of five cities on the Iberian Peninsula with global city status, (the others being Madrid, Barcelona, Lisbon and Valencia).</p>
     </section>
     <section id='caulfield-gardens'>
       <h3>13 Caulfield Gardens</h3>
@@ -92,7 +92,7 @@ section.active {
 </article>
 
 <script>
-L.mapbox.accessToken = '<your access token here>';
+//L.mapbox.accessToken = '<your access token here>';
 // In this case, we just hardcode data into the file. This could be dynamic.
 // The important part about this data is that the 'id' property matches
 // the HTML above - that's how we figure out how to link up the
@@ -104,18 +104,12 @@ var places = { type: 'FeatureCollection', features: [
   properties: { id: "braga", zoom:16 }, type: 'Feature' },
 { geometry: { type: "Point", coordinates: [-9.139175, 38.724947] },
   properties: { id: "lisboa", zoom: 10 }, type: 'Feature' },
-{ geometry: { type: "Point", coordinates: [-0.08533793, 51.50438536] },
-  properties: { id: "london-bridge" }, type: 'Feature' },
-{ geometry: { type: "Point", coordinates: [0.05991101, 51.48752939] },
-  properties: { id: "woolwich" }, type: 'Feature' },
-{ geometry: { type: "Point", coordinates: [-0.18335806, 51.49439521] },
-  properties: { id: "gloucester" }, type: 'Feature' },
-{ geometry: { type: "Point", coordinates: [-0.19684993, 51.5033856] },
-  properties: { id: "caulfield-gardens" }, type: 'Feature' },
-{ geometry: { type: "Point", coordinates: [-0.10669358, 51.51433123] },
-  properties: { id: "telegraph" }, type: 'Feature' },
-{ geometry: { type: "Point", coordinates: [-0.12416858, 51.50779757] },
-  properties: { id: "charing-cross" }, type: 'Feature' }
+{ geometry: { type: "Point", coordinates: [-8.414756, 40.205686] },
+  properties: { id: "coimbra" }, type: 'Feature' },
+{ geometry: { type: "Point", coordinates: [ -7.930455, 37.023082] },
+  properties: { id: "faro" }, type: 'Feature' },
+{ geometry: { type: "Point", coordinates: [ -8.628462, 41.158040] },
+  properties: { id: "porto" }, type: 'Feature' }
 ]};
 
 var map = L.mapbox.map('map', 'arevaju.j659op8c', {
