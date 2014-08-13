@@ -81,17 +81,17 @@ section.active {
       <p>Roma data and statistics....</p>
     </section>
     <section id='milano1'>
-    <mapa id='milano1'>
+  
       <h3>Milano</h3>
       <p>Mycroft responds to Sherlock's telegram and mentions several spies. Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He heads to the nearby Gloucester Road station to investigate and learns that the windows of Caulfield Gardens open over rail tracks where trains stop frequently.</p>
     </section>
-   </mapa>
+ 
     <section id='milano2'>
-    <mapa id='milano2'>
+  
       <h3>Milano</h3>
       <p>Mycroft responds to Sherlock's telegram and mentions several spies. Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He heads to the nearby Gloucester Road station to investigate and learns that the windows of Caulfield Gardens open over rail tracks where trains stop frequently.</p>
     </section>
-   </mapa>
+ 
       <small class='colophon'>
         Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
       </small>
@@ -100,7 +100,7 @@ section.active {
 </article>
 
 <script>
-L.mapbox.accessToken = '<your access token here>';
+//L.mapbox.accessToken = '<your access token here>';
 // In this case, we just hardcode data into the file. This could be dynamic.
 // The important part about this data is that the 'id' property matches
 // the HTML above - that's how we figure out how to link up the
@@ -123,7 +123,7 @@ var places = { type: 'FeatureCollection', features: [
 ]};
 
 
-
+// Add the basemap from personal Mapbox account
 var map = L.mapbox.map('map', 'arevaju.j659op8c', {
     zoomControl: true
 });
@@ -131,26 +131,19 @@ var map = L.mapbox.map('map', 'arevaju.j659op8c', {
 var placesLayer = L.mapbox.featureLayer(places)
     .addTo(map);
 
-//var testlayer = L.mapbox.tileLayer('http://D01RI1000323:8888/v2/italyluzv1.json', milano1).addTo(map);
-//var testgrid = L.mapbox.gridLayer('http://D01RI1000323:8888/v2/italyluzv1.json', milano1).addTo(map);
+// Add the map for different years...
+	
+//var mapavar = document.getElementById('mapa');
 
-
-//var testlayer1 = L.mapbox.tileLayer('http://D01RI1000323:8888/v2/italyluzv2050.json', milano2).addTo(map);
-//var testgrid1 = L.mapbox.gridLayer('http://D01RI1000323:8888/v2/italyluzv2050.json', milano2).addTo(map);
-
-//var testg = L.mapbox.gridControl(testgrid).addTo(map);
-
-var mapavar = document.getElementById('mapa');
-
-function addlayer(e) {
-if(mapavar == 'milano1') {
-L.mapbox.tileLayer('http://D01RI1000323:8888/v2/italyluzv1.json').addTo(map);
-L.mapbox.gridLayer('http://D01RI1000323:8888/v2/italyluzv1.json').addTo(map);
-} else {
-(mapavar == 'milano2')
-L.mapbox.tileLayer('http://D01RI1000323:8888/v2/italyluzv2050.json').addTo(map);
-L.mapbox.gridLayer('http://D01RI1000323:8888/v2/italyluzv2050.json').addTo(map);
-}};
+//function addlayer(e) {
+//if(mapavar == 'milano1') {
+//L.mapbox.tileLayer('http://D01RI1000323:8888/v2/italyluzv1.json').addTo(map);
+//L.mapbox.gridLayer('http://D01RI1000323:8888/v2/italyluzv1.json').addTo(map);
+//} else {
+//(mapavar == 'milano2')
+//L.mapbox.tileLayer('http://D01RI1000323:8888/v2/italyluzv2050.json').addTo(map);
+//L.mapbox.gridLayer('http://D01RI1000323:8888/v2/italyluzv2050.json').addTo(map);
+//}};
 
 // Ahead of time, select the elements we'll need -
 // the narrative container and the individual sections
